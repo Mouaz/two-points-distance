@@ -9,7 +9,7 @@ public class ConfigResponse {
 	}
 
 	public ConfigResponse(String embedKey) {
-		// TODO Auto-generated constructor stub
+		this.embededMapKey = embedKey;
 	}
 
 	public String getEmbededMapKey() {

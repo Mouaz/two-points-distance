@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class MapsController {
 	@Autowired
 	private IGoogleMapsClient googleMapsClient;
 
-	@GetMapping("/places")
+	@PostMapping("/places")
 	@ResponseBody
 	public ResponseEntity<PlacesInfoResponse> getDistanceBetweenTwoPlaces(
 			@RequestBody PlacesDistanceRequest req) {
@@ -33,7 +34,7 @@ public class MapsController {
 				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/points")
+	@PostMapping("/points")
 	@ResponseBody
 	public ResponseEntity<PlacesInfoResponse> getDistanceBetweenTwoPoints(
 			@RequestBody PointsDistanceRequest req) {
